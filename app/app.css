@@ -1,26 +1,27 @@
 @import "tailwindcss";
 
-/* ── Design Tokens ─────────────────────────────────────────────────────────
-   These CSS variables are the design system foundation.
-   In production, the AI design brief will generate custom values per customer.
-   ──────────────────────────────────────────────────────────────────────── */
+/* ── Neo-Brutalist Design Tokens ──────────────────────────────────────────── */
 
 @theme {
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
+  --color-primary: #0047FF;
+  --color-primary-dark: #0035cc;
   --color-primary-light: #3b82f6;
-  --color-secondary: #0f172a;
-  --color-accent: #06b6d4;
-  --color-surface: #ffffff;
-  --color-surface-dim: #f8fafc;
-  --color-surface-dark: #0f172a;
-  --color-text: #1e293b;
-  --color-text-muted: #64748b;
-  --color-text-on-dark: #f1f5f9;
-  --color-border: #e2e8f0;
+  --color-secondary: #000000;
+  --color-accent: #FF4D4D;
+  --color-surface: #FFFEF7;
+  --color-surface-dim: #F5F4EC;
+  --color-surface-dark: #111111;
+  --color-text: #111111;
+  --color-text-muted: #555555;
+  --color-text-on-dark: #FFFEF7;
+  --color-border: #000000;
 
-  --font-heading: "Inter", system-ui, -apple-system, sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --color-nb-yellow: #FFD600;
+  --color-nb-coral: #FF4D4D;
+  --color-nb-blue: #0047FF;
+
+  --font-heading: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-body: "DM Sans", system-ui, -apple-system, sans-serif;
 }
 
 /* ── Base Styles ───────────────────────────────────────────────────────── */
@@ -33,15 +34,54 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: var(--color-text);
-  background-color: var(--color-surface);
+  color: #111111;
+  background-color: #FFFEF7;
   line-height: 1.6;
+  font-size: 16px;
 }
 
-/* ── WordPress Content Styles ──────────────────────────────────────────
-   These styles apply to the rendered HTML from WordPress WP-REST API.
-   They ensure Gutenberg block output looks correct in the React app.
-   ──────────────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-weight: 800;
+}
+
+/* ── Neo-Brutalist Component Classes ──────────────────────────────────── */
+
+.nb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0px #000000;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  white-space: nowrap;
+}
+
+.nb-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000;
+}
+
+.nb-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.nb-btn-yellow { background-color: #FFD600; color: #000000; }
+.nb-btn-coral  { background-color: #FF4D4D; color: #ffffff; }
+.nb-btn-blue   { background-color: #0047FF; color: #ffffff; }
+.nb-btn-black  { background-color: #000000; color: #FFFEF7; }
+.nb-btn-white  { background-color: #FFFEF7; color: #000000; }
+
+/* ── WordPress Content Styles ──────────────────────────────────────────── */
 
 .wp-content {
   /* Headings */
